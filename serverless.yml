@@ -1,12 +1,13 @@
-service: node-in-aws-web
+service: shop-react-yulei-service
 
 frameworkVersion: '2'
 
 provider:
   name: aws
   runtime: nodejs12.x
+  region: ap-northeast-2
   # setup profile for AWS CLI.
-  # profile: node-aws
+  profile: Administrator
 
 plugins:
   - serverless-finch
@@ -17,10 +18,10 @@ plugins:
 
 custom:
   client:
-    bucketName: node-in-aws-web-bucket
+    bucketName: shop-react-yulei-bucket
     distributionFolder: build
   s3BucketName: ${self:custom.client.bucketName}
-
+  
   ## Serverless-single-page-app-plugin configuration:
   s3LocalPath: ${self:custom.client.distributionFolder}/
 

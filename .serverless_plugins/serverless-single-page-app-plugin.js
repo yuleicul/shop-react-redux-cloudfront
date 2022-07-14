@@ -7,6 +7,8 @@ class ServerlessPlugin {
     this.serverless = serverless;
     this.options = options;
     this.commands = {
+      // This command is not used in Task 2
+      // which is replaced by `npm run client:deploy`
       syncToS3: {
         usage: 'Deploys the `app` directory to your bucket',
         lifecycleEvents: [
@@ -57,15 +59,15 @@ class ServerlessPlugin {
     return { stdout, sterr };
   }
 
-  // syncs the `app` directory to the provided bucket
+  // syncs the `s3LocalPath` directory to the provided bucket
   syncDirectory() {
-    const s3Bucket = this.serverless.variables.service.custom.s3Bucket;
-    const buildFolder = this.serverless.variables.service.custom.client.distributionFolder;
+    const s3BucketName = this.serverless.variables.service.custom.s3BucketName;
+    const s3LocalPath = this.serverless.variables.service.custom.s3LocalPath;
     const args = [
       's3',
       'sync',
-      `${buildFolder}/`,
-      `s3://${s3Bucket}/`,
+      `${s3LocalPath}`,
+      `s3://${s3BucketName}/`,
       '--delete',
     ];
     const { sterr } = this.runAwsCommand(args);
