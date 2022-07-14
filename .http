@@ -1,0 +1,6 @@
+
+GET https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products
+
+### 
+
+GET https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products/P0001
