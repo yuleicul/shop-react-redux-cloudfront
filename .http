@@ -2,7 +2,15 @@
 GET https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products
 
 ### Get one product by ID
-GET https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products/P0001
+GET https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products/4f33097e-6e63-4187-8e19-7270b9ddda22
 
-### Get 404
-GET https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products/nonexistent
+### Create product
+POST https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products
+Content-Type: application/json
+
+{
+  "title": "Just a Book",
+  "description": "Created by http client plugin.",
+  "price": 88,
+  "count": 8
+}
