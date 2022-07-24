@@ -1,0 +1,8 @@
+### Get product list
+GET https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products
+
+### Get one product by ID
+GET https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products/P0001
+
+### Get 404
+GET https://w0dhw8ytcl.execute-api.ap-northeast-2.amazonaws.com/dev/products/nonexistent
