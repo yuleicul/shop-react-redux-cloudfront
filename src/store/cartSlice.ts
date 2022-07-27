@@ -54,8 +54,12 @@ export const cartSlice = createSlice({
 });
 
 export const addToCart = (product: Product) => async (dispatch: any, getState: any) => {
+  const { cart: { items } } = getState() as { cart: CartState };
+  const existingItem = items.find(i => i.product.id === product.id);
+  if (existingItem && existingItem.count > 1 && existingItem.count >= product.count) return 
+
   dispatch(cartSlice.actions.addToCart(product));
-  const { cart: { items } } = getState();
+
   await axios.put(`${API_PATHS.cart}/profile/cart`, { items }, {
     headers: {
       Authorization: `Basic ${localStorage.getItem('authorization_token')}`,
