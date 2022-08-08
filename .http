@@ -14,3 +14,13 @@ Content-Type: application/json
   "price": 88,
   "count": 8
 }
+
+### Get upload url
+GET https://tm46xr7f5j.execute-api.ap-northeast-2.amazonaws.com/dev/import?name=test.csv
+
+### Upload csv
+PUT https://import-bucket-yulei.s3.ap-northeast-2.amazonaws.com/uploaded/test.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASDEIJJ5SVSKNTZEO%2F20220727%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20220727T080746Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0yIkgwRgIhAKCAL9ALe2Njk92vcrl%2FjkuP2ynkEj7hrb7YRjh0W%2Bd3AiEAjCVJcPFAiUmhC8SJMtDQC431kwAgZh%2FalILwvkqBxMcqrQMI0f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDQxNjcyMjcyMzciDG3FlA4ZXtvtv4UuPiqBA2rvSVLc%2B6bRK%2FtBn5MY%2FT%2Fu66pJZbEy0GVPBOhis5aN9AEdxORfV89OWI0WlF1nV3zFLGrPfLt2YVO4XcVgHXEQSMmCeZYUL8SjAwaOhfbisLbbpoNlix0POjQjwGs2yOqnJZB53O3kVMfBpArTEMsNnzEVOkiy5uI0Eh%2FGfPPMPGFtO%2F2uY0dzyFAUHvh6xJiZEtO%2BxxBPml2OZLRvRZd3A1UxlOYiQ12YAArTDxJAoDJwxawALq1bSH0Bk%2Bj2%2Fi8vETgUeB57N%2FrcNyGBgUne7vE%2FFmUSigyyXFBgZBXD2FyXrkmpCpvY38Ohv%2BnSMYXITEKuRnGf3McVjbbvlRI4ML0UaGfZncer%2FuVtZpwRKeZuTea12BwoYUcO5iZNFMjs%2FsNyrnORlrT0kLK7PFgnPzqDVv2Cc3dTQg%2Bu9zceZeg6joBhCYtwxKEibLyzMO02iWDbX93EQdpgrhSE4ovkITmNvr7OIb%2FWtcyToaikZ8Qzn0fH4ty8XkXB%2Fs78QfUw0uSDlwY6nAHK1EdAaMIHH19Y7Z%2Bq3bYN%2FTY5PD5l7LZclMwejxr8Rem6vdhdLdfPaeAng3r27aP4tvh7C24IH4puwN4zOREkKWlJa4%2BcgnLHnWLO4JzeO9aQRGCKd59%2BGS768UgylGO3c2lAn7%2Fp6rOVkAuHEmlS2Bnr4bR%2BUdYmkVxXnjt99VNJXF3DLiff1G9aZcjlxWoDXTQLX3QtUdZXHO4%3D&X-Amz-Signature=9a520589fe3ace611d4c8fde1f032f6c2f3868c0ef8544af750b63fee70c834a&X-Amz-SignedHeaders=host&x-id=PutObject
+Content-Type: "text/csv"
+
+Name,email,phone number,address
+Example,example@example.com,555-555-5555,Example Address
